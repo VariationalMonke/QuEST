@@ -41,7 +41,7 @@ int main (int narg, char *varg[]) {
      */
 
     pauliX(qubits, 0);
-    pauliX(qubits, 6)
+    pauliX(qubits, 6);
     
     
     
