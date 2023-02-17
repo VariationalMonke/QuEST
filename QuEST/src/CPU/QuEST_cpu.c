@@ -2586,8 +2586,8 @@ void statevec_pauliXLocal(Qureg qureg, int targetQubit)
     sizeHalfBlock = 1LL << targetQubit;  
     sizeBlock     = 2LL * sizeHalfBlock; 
 
-    printf("sizeHalfBlock: %lld \n", sizeHalfBlock)
-    printf("sizeBlock: %lld \n", sizeBlock)
+    printf("sizeHalfBlock: %lld \n", sizeHalfBlock);
+    printf("sizeBlock: %lld \n", sizeBlock);
 
     // Can't use qureg.stateVec as a private OMP var
     qreal *stateVecReal = qureg.stateVec.real;
@@ -2608,8 +2608,8 @@ void statevec_pauliXLocal(Qureg qureg, int targetQubit)
             indexUp     = thisBlock*sizeBlock + thisTask%sizeHalfBlock;
             indexLo     = indexUp + sizeHalfBlock;
 
-            printf("indexUp: %lld \n", indexUp)
-            printf("indexLo: %lld \n", indexLo)
+            printf("indexUp: %lld \n", indexUp);
+            printf("indexLo: %lld \n", indexLo);
 
             stateRealUp = stateVecReal[indexUp];
             stateImagUp = stateVecImag[indexUp];
