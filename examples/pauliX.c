@@ -71,7 +71,6 @@ int main (int narg, char *varg[]) {
      */
 
     destroyQureg(qubits, env); 
-    destroyComplexMatrixN(toff);
 
 
 
