@@ -22,7 +22,7 @@ int main (int narg, char *varg[]) {
      * PREPARE QUBIT SYSTEM
      */
 
-    Qureg qubits = createQureg(30, env);
+    Qureg qubits = createQureg(35, env);
     initPlusState(qubits);
 
 
