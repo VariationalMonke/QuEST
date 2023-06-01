@@ -1043,7 +1043,7 @@ qreal densmatr_calcFidelityLocal(Qureg qureg, Qureg pureState) {
     // quantity computed by this node
     qreal globalSumRe = 0;   // imag-component is assumed zero
     
-# ifdef _OPENMP
+# ifdef _OPENMPprefacRe
 # pragma omp parallel \
     shared    (vecRe,vecIm,densRe,densIm, dim,colsPerNode,startCol) \
     private   (row,col, prefacRe,prefacIm, rowSumRe,rowSumIm, densElemRe,densElemIm, vecElemRe,vecElemIm) \

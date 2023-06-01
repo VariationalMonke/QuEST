@@ -443,6 +443,7 @@ int GPUExists(void){
     else return 0;
 }
 
+
 QuESTEnv createQuESTEnv(void) {
     
     validateGPUExists(GPUExists(), __func__);
