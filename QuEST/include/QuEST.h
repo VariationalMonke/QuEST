@@ -337,6 +337,9 @@ typedef struct Qureg
     //! Number of chunks the state vector is broken up into -- the number of MPI processes used
     int numChunks;
     
+    int roundsAlloc; // number of times to allocate
+    long long int allocSize; // size of each round of allocation
+
     //! Computational state amplitudes - a subset thereof in the MPI version
     ComplexArray stateVec; 
     //! Temporary storage for a chunk of the state vector received from another process in the MPI version

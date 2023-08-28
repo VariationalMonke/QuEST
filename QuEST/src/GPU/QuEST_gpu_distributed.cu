@@ -17,6 +17,11 @@
 # define REDUCE_SHARED_SIZE 512
 # define DEBUG 0
 
+
+
+// DISCONTINUED
+
+
 // createQuESTEnv
 
 // in single-GPU, 1. GPUExists to check if gpu existed, can potentially extends to return the number of nodes

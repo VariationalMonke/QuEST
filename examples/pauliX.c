@@ -12,8 +12,10 @@ int main (int narg, char *varg[]) {
 
     QuESTEnv env = createQuESTEnv();
 
+    int nQubit = 32;
+
     printf("-------------------------------------------------------\n");
-    printf("Running QuEST tutorial:\n\t Basic circuit involving a system of 3 qubits.\n");
+    printf("Running QuEST tutorial:\n\t Basic circuit involving a system of %d qubits.\n", nQubit);
     printf("-------------------------------------------------------\n");
 
 
@@ -22,8 +24,8 @@ int main (int narg, char *varg[]) {
      * PREPARE QUBIT SYSTEM
      */
 
-    Qureg qubits = createQureg(30, env);
-    initPlusState(qubits);
+    Qureg qubits = createQureg(nQubit, env);
+    //initPlusState(qubits);
 
 
 
@@ -34,6 +36,8 @@ int main (int narg, char *varg[]) {
     reportQuregParams(qubits);
     reportQuESTEnv(env);
 
+    //reportStateToScreen(qubits, env,0);
+
 
 
     /*
@@ -41,19 +45,23 @@ int main (int narg, char *varg[]) {
      */
 
     pauliX(qubits, 0);
-    pauliX(qubits, 20);
+
+    //reportStateToScreen(qubits, env,0);
+
+    pauliX(qubits, 2);
     
+    //reportStateToScreen(qubits, env,0);
     
     
     /*
      * STUDY QUANTUM STATE
      */
 
-    printf("\nCircuit output:\n");
+    // printf("\nCircuit output:\n");
 
     qreal prob;
-    prob = getProbAmp(qubits, 7);
-    printf("Probability amplitude of |111>: " REAL_STRING_FORMAT "\n", prob);
+    prob = getProbAmp(qubits, 0);
+    printf("Probability amplitude of |000>: " REAL_STRING_FORMAT "\n", prob);
 
     prob = calcProbOfOutcome(qubits, 2, 1);
     printf("Probability of qubit 2 being in state 1: " REAL_STRING_FORMAT "\n", prob);
@@ -61,7 +69,7 @@ int main (int narg, char *varg[]) {
     int outcome = measure(qubits, 0);
     printf("Qubit 0 was measured in state %d\n", outcome);
 
-    outcome = measureWithStats(qubits, 6, &prob);
+    outcome = measureWithStats(qubits, 2, &prob);
     printf("Qubit 2 collapsed to %d with probability " REAL_STRING_FORMAT "\n", outcome, prob);
 
 

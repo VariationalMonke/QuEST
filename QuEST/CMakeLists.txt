@@ -31,6 +31,10 @@ set(PRECISION 2 CACHE STRING
 
 option(GPUACCELERATED "Whether to program will run on GPU. Set to 1 to enable" 0)
 
+option(UNIMEM "whether to enable CUDA unified memory, set to 1 to enable" 0)
+
+option(MANUAL "enable manual memory transfer for oversubscription" 0)
+
 set(GPU_COMPUTE_CAPABILITY 30 CACHE STRING "GPU hardware dependent, lookup at https://developer.nvidia.com/cuda-gpus. Write without fullstop")
 
 
@@ -42,6 +46,7 @@ set(GPU_COMPUTE_CAPABILITY 30 CACHE STRING "GPU hardware dependent, lookup at ht
 # Show the user their settings
 message(STATUS "Precision is ${PRECISION}")
 message(STATUS "GPU acceleration is ${GPUACCELERATED}")
+message(STATUS "CUDA unified memory is ${UNIMEM}")
 message(STATUS "OMP acceleration is ${MULTITHREADED}")
 message(STATUS "MPI distribution is ${DISTRIBUTED}")
 
