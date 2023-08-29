@@ -20,6 +20,15 @@
 # define REDUCE_SHARED_SIZE 512
 # define DEBUG 0
 
+/*
+ * TODO
+ * variable in either QuReg or QuestEnv to place the cuda streams
+ * stream sync function
+ * modify all init functions to use multiple devices
+ * mofify all gate functions to use multiple devices
+ * check for race condition
+ * check for gpu-cpu-gpu commnunication
+ */
 
 
 /*
