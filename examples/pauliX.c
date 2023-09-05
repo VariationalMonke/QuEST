@@ -12,7 +12,7 @@ int main (int narg, char *varg[]) {
 
     QuESTEnv env = createQuESTEnv();
 
-    int nQubit = 32;
+    int nQubit = 25;
 
     printf("-------------------------------------------------------\n");
     printf("Running QuEST tutorial:\n\t Basic circuit involving a system of %d qubits.\n", nQubit);
@@ -63,14 +63,14 @@ int main (int narg, char *varg[]) {
     prob = getProbAmp(qubits, 0);
     printf("Probability amplitude of |000>: " REAL_STRING_FORMAT "\n", prob);
 
-    prob = calcProbOfOutcome(qubits, 2, 1);
-    printf("Probability of qubit 2 being in state 1: " REAL_STRING_FORMAT "\n", prob);
+    // prob = calcProbOfOutcome(qubits, 2, 1);
+    // printf("Probability of qubit 2 being in state 1: " REAL_STRING_FORMAT "\n", prob);
 
-    int outcome = measure(qubits, 0);
-    printf("Qubit 0 was measured in state %d\n", outcome);
+    // int outcome = measure(qubits, 0);
+    // printf("Qubit 0 was measured in state %d\n", outcome);
 
-    outcome = measureWithStats(qubits, 2, &prob);
-    printf("Qubit 2 collapsed to %d with probability " REAL_STRING_FORMAT "\n", outcome, prob);
+    // outcome = measureWithStats(qubits, 2, &prob);
+    // printf("Qubit 2 collapsed to %d with probability " REAL_STRING_FORMAT "\n", outcome, prob);
 
 
 

@@ -33,7 +33,7 @@ option(GPUACCELERATED "Whether to program will run on GPU. Set to 1 to enable" 0
 
 option(UNIMEM "whether to enable CUDA unified memory, set to 1 to enable" 0)
 
-option(MANUAL "enable manual memory transfer for oversubscription" 0)
+option(MULTIGPU "enable multiple gpu" 0)
 
 set(GPU_COMPUTE_CAPABILITY 30 CACHE STRING "GPU hardware dependent, lookup at https://developer.nvidia.com/cuda-gpus. Write without fullstop")
 
@@ -47,6 +47,7 @@ set(GPU_COMPUTE_CAPABILITY 30 CACHE STRING "GPU hardware dependent, lookup at ht
 message(STATUS "Precision is ${PRECISION}")
 message(STATUS "GPU acceleration is ${GPUACCELERATED}")
 message(STATUS "CUDA unified memory is ${UNIMEM}")
+message(STATUS "Multiple GPU is ${MULTIGPU}")
 message(STATUS "OMP acceleration is ${MULTITHREADED}")
 message(STATUS "MPI distribution is ${DISTRIBUTED}")
 
